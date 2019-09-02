@@ -1,0 +1,738 @@
+<Button>:
+    background_color: 0,0.75,1,1 # Mudar a cor do fundo dos botões e das letras
+    color: 0.95,.9,0.55,1
+
+<Gerenciador>:
+    Pre:
+        name:'pre'
+    Aut
+        name: 'aut'
+    Bases:
+        name: 'bases'
+<Pre>:
+    BoxLayout:
+        size_hint_y:None
+        size_hint_x:None
+        height:'710'
+        width:'1366'
+        orientation:'horizontal'
+        padding:75
+        spacing:75
+        canvas:
+            Color:
+                rgba:1,1,1,1
+            Rectangle:
+                size:self.size
+                pos:self.pos
+                source:'load.png'
+        Button:
+            text:'Avancar'
+            size_hint_y:None
+            height:50
+            on_release:app.root.current = 'aut'
+            on_press:root.addWidget()
+        TextInput:
+            id:texto
+
+<Aut>:
+    BoxLayout:
+        orientation:'horizontal'
+        size_hint_y:None
+        size_hint_x:None
+        height:'710'# definir o tamanho de cada BoxLayout principal
+        width:'1366'
+        padding:0
+        spacing:0
+        canvas:
+            Color:
+                rgba:1,1,1,1
+            Rectangle:
+                size:self.size
+                pos:self.pos
+                source:'2.png'
+    BoxLayout:
+        padding: 200
+        #spacing: 200
+        orientation: 'horizontal'
+        BoxLayout:
+            orientation:'vertical'
+            padding:0
+            spacing:0
+            BoxLayout:
+                orientation:'horizontal'
+                padding:0
+                spacing:0
+                Label:
+                    text: 'EcoRI'
+                CheckBox:
+                    size_hint_x:.55
+                    id: ecori
+            BoxLayout:
+                orientation:'horizontal'
+                padding:0
+                spacing:0
+                Label:
+                    text: 'PstI'
+                CheckBox:
+                    size_hint_x:.55
+                    id: psti
+            BoxLayout:
+                orientation:'horizontal'
+                padding:0
+                spacing:0
+                Label:
+                    text: 'SpeI'
+                CheckBox:
+                    size_hint_x:.55
+                    id: spei
+            BoxLayout:
+                orientation:'horizontal'
+                padding:0
+                spacing:0
+                Label:
+                    text: 'XbaI'
+                CheckBox:
+                    size_hint_x:.55
+                    id: xbai
+
+
+        BoxLayout:
+            orientation:'vertical'
+            padding:0
+            spacing:0
+        BoxLayout:
+            orientation:'vertical'
+            padding:0
+            spacing:0
+            Button
+                text:'TTT'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('TTT')
+            Button
+                text:'TTC'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('TTC')
+            Button
+                text:'TTA'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('TTA')
+            Button
+                text:'TTG'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('TTG')
+            Button
+                text:'TCT'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('TCT')
+            Button
+                text:'TCC'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('TCC')
+            Button
+                text:'TCA'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('TCA')
+            Button
+                text:'TCG'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('TCG')
+        BoxLayout:
+            orientation:'vertical'
+            padding:0
+            spacing:0
+            Button
+                text:'TAT'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('TAT')
+            Button
+                text:'TAC'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('TAC')
+            Button
+                text:'TAA'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('TAA')
+            Button
+                text:'TAG'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('TAG')
+            Button
+                text:'TGT'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('TGT')
+            Button
+                text:'TGC'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('TGC')
+            Button
+                text:'TGA'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('TGA')
+            Button
+                text:'TGG'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('TGG')
+        BoxLayout:
+            orientation:'vertical'
+            padding:0
+            spacing:0
+            Button
+                text:'CTT'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('CTT')
+            Button
+                text:'CTC'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('CTC')
+            Button
+                text:'CTA'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('CTA')
+            Button
+                text:'CTG'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('CTG')
+            Button
+                text:'CCT'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('CCT')
+            Button
+                text:'CCC'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('CCC')
+            Button
+                text:'CCA'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('CCA')
+            Button
+                text:'CCG'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('CCG')
+        BoxLayout:
+            orientation:'vertical'
+            padding:0
+            spacing:0
+            Button
+                text:'CAT'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('CAT')
+            Button
+                text:'CAC'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('CAC')
+            Button
+                text:'CAA'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('CAA')
+            Button
+                text:'CAG'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('CAG')
+            Button
+                text:'CGT'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('CGT')
+            Button
+                text:'CGC'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('CGC')
+            Button
+                text:'CGA'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('CGA')
+            Button
+                text:'CGG'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('CGG')
+        BoxLayout:
+            orientation:'vertical'
+            padding:0
+            spacing:0
+            Button
+                text:'ATT'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('ATT')
+            Button
+                text:'ATC'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('ATC')
+            Button
+                text:'ATA'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('ATA')
+            Button
+                text:'ATG'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('ATG')
+            Button
+                text:'ACT'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('ACT')
+            Button
+                text:'ACC'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('ACC')
+            Button
+                text:'ACA'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('ACA')
+            Button
+                text:'ACG'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('ACG')
+        BoxLayout:
+            orientation:'vertical'
+            padding:0
+            spacing:0
+            Button
+                text:'AAT'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('AAT')
+            Button
+                text:'AAC'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('AAC')
+            Button
+                text:'AAA'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('AAA')
+            Button
+                text:'AAG'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('AAG')
+            Button
+                text:'AGT'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('AGT')
+            Button
+                text:'AGC'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('AGC')
+            Button
+                text:'AGA'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('AGA')
+            Button
+                text:'AGG'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('AGG')
+        BoxLayout:
+            orientation:'vertical'
+            padding:0
+            spacing:0
+            Button
+                text:'GTT'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('GTT')
+            Button
+                text:'GTC'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('GTC')
+            Button
+                text:'GTA'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('GTA')
+            Button
+                text:'GTG'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('GTG')
+            Button
+                text:'GCT'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('GTC')
+            Button
+                text:'GCC'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('GCC')
+            Button
+                text:'GCA'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('GCA')
+            Button
+                text:'GCG'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('GCG')
+        BoxLayout:
+            orientation:'vertical'
+            padding:0
+            spacing:0
+            Button
+                text:'GAT'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('GAT')
+            Button
+                text:'GAC'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('GAC')
+            Button
+                text:'GAA'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('GAA')
+            Button
+                text:'GAG'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('GAG')
+            Button
+                text:'GGT'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('GGT')
+            Button
+                text:'GGC'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('GGC')
+            Button
+                text:'GGA'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('GGA')
+            Button
+                text:'GGG'
+                size_hint: .12,.50
+                size_hint_x: 1
+                size_hint_y: .9
+                multiline: 'False'
+                pos:50,60
+                on_release:root.cod('GGG')
+        BoxLayout:
+            orientation:'vertical'
+            padding:0
+            spacing:0
+        BoxLayout:
+            orientation:'vertical'
+            padding:0
+            spacing:0
+
+    BoxLayout:
+        size_hint_y:None
+        padding:10
+        spacing:20
+        height:70
+        BoxLayout:
+            orientation:'vertical'
+            padding:0
+            spacing:0
+        Button:
+            text:'SAIR'
+            on_press:app.stop()
+        BoxLayout:
+            orientation:'vertical'
+            padding:0
+            spacing:0
+        Button:
+            text:'OTIMIZAR TODOS'
+            on_press: root.optimize()
+        BoxLayout:
+            orientation:'vertical'
+            padding:0
+            spacing:0
+        Button:
+            text:'AVANCAR'
+            on_press:root.tiraenzima(ecori.active,spei.active,psti.active,xbai.active)
+            on_release: app.root.current = 'bases'
+        BoxLayout:
+            orientation:'vertical'
+            padding:0
+            spacing:0
+        BoxLayout:
+            orientation:'vertical'
+            padding:0
+            spacing:0
+
+<Bases>:
+    BoxLayout:
+        orientation:'vertical'
+        size_hint_y:None
+        size_hint_x:None
+        height:'710'
+        width:'1366'
+        padding:20
+        spacing:30
+        canvas:
+            Color:
+                rgba:1,1,1,1
+            Rectangle:
+                size:self.size
+                pos:self.pos
+                source:'4.png'
+        BoxLayout:
+            size_hint_x: 1
+            size_hint_y: .9
+        BoxLayout:
+            padding:50
+            spacing:30
+            height:2
+            Button:
+                text:'VOLTAR'
+                on_press:app.root.current = 'aut'
+                size_hint: .12,.20
+                size_hint_x: 0.3
+                size_hint_y: .3
+            Button:
+                text:'SALVAR'
+                size_hint: .12,.20
+                size_hint_x: 0.3
+                size_hint_y: .3
+                on_release: root.salvafasta()
+            Button:
+                text:'GERAR RNA'
+                size_hint: .12,.20
+                size_hint_x: 0.3
+                size_hint_y: .3
+                on_release: root.gerarna()
+            Button:
+                size_hint: .12,.20
+                size_hint_x: 0.3
+                size_hint_y: .3
+                text:'RNASTRUCTURE'
+                on_press: root.val1()
