@@ -1,6 +1,33 @@
 <Button>:
     background_color: 0,0.75,1,1 # Mudar a cor do fundo dos botões e das letras
     color: 0.95,.9,0.55,1
+<SaveDialog>:
+    text_input: text_input
+    BoxLayout:
+        size: root.size
+        pos: root.pos
+        orientation: "vertical"
+        FileChooserListView:
+            id: filechooser
+            on_selection: text_input.text = self.selection and self.selection[0] or ''
+
+        TextInput:
+            id: text_input
+            size_hint_y: None
+            height: 30
+            multiline: False
+
+        BoxLayout:
+            size_hint_y: None
+            height: 30
+            Button:
+                text: "Cancel"
+                on_release: root.cancel()
+
+            Button:
+                text: "Salvar"
+                on_release: root.save(filechooser.path, text_input.text)
+
 
 <Gerenciador>:
     Pre:
@@ -33,7 +60,16 @@
             on_press:root.addWidget()
         TextInput:
             id:texto
-
+<Informacao>:
+    Label:
+        text: "Voce atualizou a sequencia"
+        size_hint: 0.6, 0.8
+        pos_hint: {"x":0.2, "top":1}
+<Rna>:
+    Label:
+        text: root.salvafasta()
+        size_hint: 0.6, 0.8
+        pos_hint: {"x":0.2, "top":1}
 <Aut>:
     BoxLayout:
         orientation:'horizontal'
@@ -100,10 +136,6 @@
             orientation:'vertical'
             padding:0
             spacing:0
-        BoxLayout:
-            orientation:'vertical'
-            padding:0
-            spacing:0
             Button
                 text:'TTT'
                 size_hint: .12,.50
@@ -111,7 +143,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('TTT')
+                on_press:root.cod('TTT')
+                on_release:root.btn()
             Button
                 text:'TTC'
                 size_hint: .12,.50
@@ -119,7 +152,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('TTC')
+                on_press:root.cod('TTC')
+                on_release:root.btn()
             Button
                 text:'TTA'
                 size_hint: .12,.50
@@ -127,7 +161,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('TTA')
+                on_press:root.cod('TTA')
+                on_release:root.btn()
             Button
                 text:'TTG'
                 size_hint: .12,.50
@@ -135,7 +170,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('TTG')
+                on_press:root.cod('TTG')
+                on_release:root.btn()
             Button
                 text:'TCT'
                 size_hint: .12,.50
@@ -143,7 +179,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('TCT')
+                on_press:root.cod('TCT')
+                on_release:root.btn()
             Button
                 text:'TCC'
                 size_hint: .12,.50
@@ -151,7 +188,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('TCC')
+                on_press:root.cod('TCC')
+                on_release:root.btn()
             Button
                 text:'TCA'
                 size_hint: .12,.50
@@ -159,7 +197,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('TCA')
+                on_press:root.cod('TCA')
+                on_release:root.btn()
             Button
                 text:'TCG'
                 size_hint: .12,.50
@@ -167,7 +206,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('TCG')
+                on_press:root.cod('TCG')
+                on_release:root.btn()
         BoxLayout:
             orientation:'vertical'
             padding:0
@@ -179,7 +219,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('TAT')
+                on_press:root.cod('TAT')
+                on_release:root.btn()
             Button
                 text:'TAC'
                 size_hint: .12,.50
@@ -187,7 +228,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('TAC')
+                on_press:root.cod('TAC')
+                on_release:root.btn()
             Button
                 text:'TAA'
                 size_hint: .12,.50
@@ -195,7 +237,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('TAA')
+                on_press:root.cod('TAA')
+                on_release:root.btn()
             Button
                 text:'TAG'
                 size_hint: .12,.50
@@ -203,7 +246,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('TAG')
+                on_press:root.cod('TAG')
+                on_release:root.btn()
             Button
                 text:'TGT'
                 size_hint: .12,.50
@@ -211,7 +255,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('TGT')
+                on_press:root.cod('TGT')
+                on_release:root.btn()
             Button
                 text:'TGC'
                 size_hint: .12,.50
@@ -219,7 +264,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('TGC')
+                on_press:root.cod('TGC')
+                on_release:root.btn()
             Button
                 text:'TGA'
                 size_hint: .12,.50
@@ -227,7 +273,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('TGA')
+                on_press:root.cod('TGA')
+                on_release:root.btn()
             Button
                 text:'TGG'
                 size_hint: .12,.50
@@ -235,7 +282,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('TGG')
+                on_press:root.cod('TGG')
+                on_release:root.btn()
         BoxLayout:
             orientation:'vertical'
             padding:0
@@ -247,7 +295,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('CTT')
+                on_press:root.cod('CTT')
+                on_release:root.btn()
             Button
                 text:'CTC'
                 size_hint: .12,.50
@@ -255,7 +304,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('CTC')
+                on_press:root.cod('CTC')
+                on_release:root.btn()
             Button
                 text:'CTA'
                 size_hint: .12,.50
@@ -263,7 +313,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('CTA')
+                on_press:root.cod('CTA')
+                on_release:root.btn()
             Button
                 text:'CTG'
                 size_hint: .12,.50
@@ -271,7 +322,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('CTG')
+                on_press:root.cod('CTG')
+                on_release:root.btn()
             Button
                 text:'CCT'
                 size_hint: .12,.50
@@ -279,7 +331,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('CCT')
+                on_press:root.cod('CCT')
+                on_release:root.btn()
             Button
                 text:'CCC'
                 size_hint: .12,.50
@@ -287,7 +340,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('CCC')
+                on_press:root.cod('CCC')
+                on_release:root.btn()
             Button
                 text:'CCA'
                 size_hint: .12,.50
@@ -295,7 +349,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('CCA')
+                on_press:root.cod('CCA')
+                on_release:root.btn()
             Button
                 text:'CCG'
                 size_hint: .12,.50
@@ -303,7 +358,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('CCG')
+                on_press:root.cod('CCG')
+                on_release:root.btn()
         BoxLayout:
             orientation:'vertical'
             padding:0
@@ -315,7 +371,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('CAT')
+                on_press:root.cod('CAT')
+                on_release:root.btn()
             Button
                 text:'CAC'
                 size_hint: .12,.50
@@ -323,7 +380,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('CAC')
+                on_press:root.cod('CAC')
+                on_release:root.btn()
             Button
                 text:'CAA'
                 size_hint: .12,.50
@@ -331,7 +389,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('CAA')
+                on_press:root.cod('CAA')
+                on_release:root.btn()
             Button
                 text:'CAG'
                 size_hint: .12,.50
@@ -339,7 +398,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('CAG')
+                on_press:root.cod('CAG')
+                on_release:root.btn()
             Button
                 text:'CGT'
                 size_hint: .12,.50
@@ -347,7 +407,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('CGT')
+                on_press:root.cod('CGT')
+                on_release:root.btn()
             Button
                 text:'CGC'
                 size_hint: .12,.50
@@ -355,7 +416,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('CGC')
+                on_press:root.cod('CGC')
+                on_release:root.btn()
             Button
                 text:'CGA'
                 size_hint: .12,.50
@@ -363,7 +425,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('CGA')
+                on_press:root.cod('CGA')
+                on_release:root.btn()
             Button
                 text:'CGG'
                 size_hint: .12,.50
@@ -371,7 +434,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('CGG')
+                on_press:root.cod('CGG')
+                on_release:root.btn()
         BoxLayout:
             orientation:'vertical'
             padding:0
@@ -383,7 +447,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('ATT')
+                on_press:root.cod('ATT')
+                on_release:root.btn()
             Button
                 text:'ATC'
                 size_hint: .12,.50
@@ -391,7 +456,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('ATC')
+                on_press:root.cod('ATC')
+                on_release:root.btn()
             Button
                 text:'ATA'
                 size_hint: .12,.50
@@ -399,7 +465,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('ATA')
+                on_press:root.cod('ATA')
+                on_release:root.btn()
             Button
                 text:'ATG'
                 size_hint: .12,.50
@@ -407,7 +474,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('ATG')
+                on_press:root.cod('ATG')
+                on_release:root.btn()
             Button
                 text:'ACT'
                 size_hint: .12,.50
@@ -415,7 +483,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('ACT')
+                on_press:root.cod('ACT')
+                on_release:root.btn()
             Button
                 text:'ACC'
                 size_hint: .12,.50
@@ -423,7 +492,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('ACC')
+                on_press:root.cod('ACC')
+                on_release:root.btn()
             Button
                 text:'ACA'
                 size_hint: .12,.50
@@ -431,7 +501,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('ACA')
+                on_press:root.cod('ACA')
+                on_release:root.btn()
             Button
                 text:'ACG'
                 size_hint: .12,.50
@@ -439,7 +510,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('ACG')
+                on_press:root.cod('ACG')
+                on_release:root.btn()
         BoxLayout:
             orientation:'vertical'
             padding:0
@@ -451,7 +523,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('AAT')
+                on_press:root.cod('AAT')
+                on_release:root.btn()
             Button
                 text:'AAC'
                 size_hint: .12,.50
@@ -459,7 +532,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('AAC')
+                on_press:root.cod('AAC')
+                on_release:root.btn()
             Button
                 text:'AAA'
                 size_hint: .12,.50
@@ -467,7 +541,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('AAA')
+                on_press:root.cod('AAA')
+                on_release:root.btn()
             Button
                 text:'AAG'
                 size_hint: .12,.50
@@ -475,7 +550,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('AAG')
+                on_press:root.cod('AAG')
+                on_release:root.btn()
             Button
                 text:'AGT'
                 size_hint: .12,.50
@@ -483,7 +559,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('AGT')
+                on_press:root.cod('AGT')
+                on_release:root.btn()
             Button
                 text:'AGC'
                 size_hint: .12,.50
@@ -491,7 +568,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('AGC')
+                on_press:root.cod('AGC')
+                on_release:root.btn()
             Button
                 text:'AGA'
                 size_hint: .12,.50
@@ -499,7 +577,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('AGA')
+                on_press:root.cod('AGA')
+                on_release:root.btn()
             Button
                 text:'AGG'
                 size_hint: .12,.50
@@ -507,7 +586,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('AGG')
+                on_press:root.cod('AGG')
+                on_release:root.btn()
         BoxLayout:
             orientation:'vertical'
             padding:0
@@ -519,7 +599,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('GTT')
+                on_press:root.cod('GTT')
+                on_release:root.btn()
             Button
                 text:'GTC'
                 size_hint: .12,.50
@@ -527,7 +608,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('GTC')
+                on_press:root.cod('GTC')
+                on_release:root.btn()
             Button
                 text:'GTA'
                 size_hint: .12,.50
@@ -535,7 +617,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('GTA')
+                on_press:root.cod('GTA')
+                on_release:root.btn()
             Button
                 text:'GTG'
                 size_hint: .12,.50
@@ -543,7 +626,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('GTG')
+                on_press:root.cod('GTG')
+                on_release:root.btn()
             Button
                 text:'GCT'
                 size_hint: .12,.50
@@ -551,7 +635,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('GTC')
+                on_press:root.cod('GTC')
+                on_release:root.btn()
             Button
                 text:'GCC'
                 size_hint: .12,.50
@@ -559,7 +644,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('GCC')
+                on_press:root.cod('GCC')
+                on_release:root.btn()
             Button
                 text:'GCA'
                 size_hint: .12,.50
@@ -567,7 +653,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('GCA')
+                on_press:root.cod('GCA')
+                on_release:root.btn()
             Button
                 text:'GCG'
                 size_hint: .12,.50
@@ -575,7 +662,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('GCG')
+                on_press:root.cod('GCG')
+                on_release:root.btn()
         BoxLayout:
             orientation:'vertical'
             padding:0
@@ -587,7 +675,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('GAT')
+                on_press:root.cod('GAT')
+                on_release:root.btn()
             Button
                 text:'GAC'
                 size_hint: .12,.50
@@ -595,7 +684,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('GAC')
+                on_press:root.cod('GAC')
+                on_release:root.btn()
             Button
                 text:'GAA'
                 size_hint: .12,.50
@@ -603,7 +693,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('GAA')
+                on_press:root.cod('GAA')
+                on_release:root.btn()
             Button
                 text:'GAG'
                 size_hint: .12,.50
@@ -611,7 +702,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('GAG')
+                on_press:root.cod('GAG')
+                on_release:root.btn()
             Button
                 text:'GGT'
                 size_hint: .12,.50
@@ -619,7 +711,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('GGT')
+                on_press:root.cod('GGT')
+                on_release:root.btn()
             Button
                 text:'GGC'
                 size_hint: .12,.50
@@ -627,7 +720,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('GGC')
+                on_press:root.cod('GGC')
+                on_release:root.btn()
             Button
                 text:'GGA'
                 size_hint: .12,.50
@@ -635,7 +729,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('GGA')
+                on_press:root.cod('GGA')
+                on_release:root.btn()
             Button
                 text:'GGG'
                 size_hint: .12,.50
@@ -643,7 +738,8 @@
                 size_hint_y: .9
                 multiline: 'False'
                 pos:50,60
-                on_release:root.cod('GGG')
+                on_press:root.cod('GGG')
+                on_release:root.btn()
         BoxLayout:
             orientation:'vertical'
             padding:0
@@ -672,6 +768,7 @@
         Button:
             text:'OTIMIZAR TODOS'
             on_press: root.optimize()
+            on_release:root.btn()
         BoxLayout:
             orientation:'vertical'
             padding:0
@@ -696,7 +793,7 @@
         size_hint_x:None
         height:'710'
         width:'1366'
-        padding:20
+        padding:50
         spacing:30
         canvas:
             Color:
@@ -711,28 +808,28 @@
         BoxLayout:
             padding:50
             spacing:30
-            height:2
+            height:60
             Button:
                 text:'VOLTAR'
                 on_press:app.root.current = 'aut'
                 size_hint: .12,.20
                 size_hint_x: 0.3
-                size_hint_y: .3
+                size_hint_y: .4
             Button:
                 text:'SALVAR'
                 size_hint: .12,.20
                 size_hint_x: 0.3
-                size_hint_y: .3
-                on_release: root.salvafasta()
+                size_hint_y: .4
+                on_press: root.salvin()
             Button:
                 text:'GERAR RNA'
                 size_hint: .12,.20
                 size_hint_x: 0.3
-                size_hint_y: .3
+                size_hint_y: .4
                 on_release: root.gerarna()
             Button:
                 size_hint: .12,.20
                 size_hint_x: 0.3
-                size_hint_y: .3
+                size_hint_y: .4
                 text:'RNASTRUCTURE'
                 on_press: root.val1()
